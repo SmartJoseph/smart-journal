@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.com.smartjoseph.smart_journal"
+        resValue "string", "app_name", "Smart Journal"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
+    productFlavors {
+        beta {
+            resValue "string", "app_name", "Smart Journal"
+            versionName '0.1.0 Beta'
+            versionCode 1
+        }
+        full {
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    // Set this dependency to use JUnit 4 rules
+    // Set this dependency to build and run Espresso tests
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.1') {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+    }
+    // Set this dependency to build and run UI Automator tests
+//    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18'
+    //    compile 'com.android.support:support-v7:25.3.1'
+    compile 'com.google.firebase:firebase-core:9.8.0'
+    compile 'com.google.firebase:firebase-auth:9.8.0'
+    compile 'com.firebaseui:firebase-ui-auth:0.6.0'
+    compile 'com.google.android.gms:play-services-auth:9.8.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'uk.co.chrisjenx:calligraphy:2.1.0'
+    compile 'com.jaredrummler:android-device-names:1.0.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support:support-annotations:25.3.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+}
+apply plugin: 'com.google.gms.google-services'
