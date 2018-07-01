@@ -64,6 +64,9 @@
     <string name="toast_note_deletion">The note has been deleted</string>
     <string name="toast_title_empty">Please enter a title</string>
 
+    <!-- Thouthts -->
+    <string name="first_thought">Everyday may not be a good day\nbut there is good in every day</string>
+
     <!-- Settings Preferences -->
     <string name="pref_general">General</string>
     <string name="pref_general_send_feedback_key">pref_key_feedback</string>
